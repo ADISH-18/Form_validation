@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://img.freepik.com/premium-photo/pink-blue-wave_220873-43079.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: backgroundAnimation 30s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+span{
+    color: red;
+    white-space: nowrap;
+    font-size: x-small;
+}
+.form-container {
+    background-color: rgba(0, 0, 0, 0.64);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgb(255, 0, 0);
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #e72e00;
+    position: relative;
+    animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 5px #e72e00; }
+    to { text-shadow: 0 0 20px #e72e00; }
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #f5f5f5;
+    font-size: 14px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+input {
+    padding: 12px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    color: #f5f5f5;
+    background: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+input:focus {
+    border-color: #e72e00;
+    box-shadow: 0 0 12px rgba(0, 191, 174, 0.6);
+    transform: scale(1.02);
+}
+
+input:focus + label,
+input:valid + label {
+    color: #e72e00;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+input::placeholder {
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+button {
+    padding: 12px;
+    background-color: #e72e004f;
+    color: #ffffff;
+    border: 2px solid #e72e00;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: buttonOutline 2s infinite alternate;
+}
+
+@keyframes buttonOutline {
+    0% { box-shadow: 0 0 5px #e72e00; }
+    50% { box-shadow: 0 0 20px #e72e00; }
+    100% { box-shadow: 0 0 5px #e72e00; }
+}
+
+button:hover {
+    transform: scale(1.05);
+}
